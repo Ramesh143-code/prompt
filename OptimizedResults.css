@@ -1,0 +1,357 @@
+/* Optimized Results Styles */
+
+.optimized-container {
+  margin-top: var(--spacing-xl);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.optimized-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.optimized-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.best-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(234, 179, 8, 0.2));
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-xl);
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.badge-icon {
+  font-size: 1.2rem;
+}
+
+/* Prompts Grid */
+.prompts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.prompt-card {
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.prompt-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.prompt-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-highlight);
+  box-shadow: var(--shadow-glow);
+}
+
+.prompt-card:hover::before {
+  opacity: 1;
+}
+
+.original-card {
+  border-color: var(--text-muted);
+  cursor: default;
+}
+
+.original-card:hover {
+  transform: none;
+  border-color: var(--text-muted);
+  box-shadow: none;
+}
+
+.original-card::before {
+  background: var(--text-muted);
+}
+
+.best-card {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
+}
+
+.best-card::before {
+  background: linear-gradient(90deg, var(--color-accent), #eab308);
+  opacity: 1;
+}
+
+.selected {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+}
+
+.prompt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.prompt-type {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.prompt-badges {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.prompt-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
+}
+
+.prompt-badge.baseline {
+  background: rgba(100, 116, 139, 0.2);
+  color: var(--text-muted);
+}
+
+.prompt-badge.best {
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--color-accent);
+}
+
+.prompt-badge:not(.baseline):not(.best) {
+  background: rgba(0, 212, 255, 0.2);
+  color: var(--color-primary);
+}
+
+.prompt-content {
+  margin-bottom: var(--spacing-md);
+}
+
+.prompt-text {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 0.9375rem;
+  white-space: pre-wrap;
+}
+
+/* Improvements Section */
+.improvements-section {
+  margin-bottom: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--border-color);
+}
+
+.improvements-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.improvements-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.improvement-tag {
+  padding: 0.25rem 0.75rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: var(--radius-sm);
+  color: var(--color-success);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Scores Section */
+.scores-section {
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--border-color);
+}
+
+.scores-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+.scores-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.score-item {
+  display: grid;
+  grid-template-columns: 100px 1fr 60px;
+  gap: var(--spacing-sm);
+  align-items: center;
+}
+
+.score-label {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.score-bar-container {
+  height: 6px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.score-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  border-radius: var(--radius-sm);
+  transition: width 1s ease-out;
+}
+
+.overall-bar {
+  background: linear-gradient(90deg, var(--color-accent), #eab308);
+}
+
+.score-value {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-align: right;
+  font-weight: 600;
+}
+
+.score-value.highlight {
+  color: var(--color-accent);
+}
+
+.overall-score {
+  padding-top: var(--spacing-xs);
+  border-top: 1px solid var(--border-color);
+  margin-top: var(--spacing-xs);
+}
+
+.rank-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-highlight);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.expand-indicator {
+  margin-top: var(--spacing-md);
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.prompt-card:hover .expand-indicator {
+  opacity: 1;
+}
+
+/* Tips Section */
+.tips-section {
+  margin-top: var(--spacing-xl);
+}
+
+.tips-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  backdrop-filter: blur(10px);
+}
+
+.tips-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.tips-icon {
+  font-size: 1.5rem;
+}
+
+.tips-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.tips-list li {
+  position: relative;
+  padding-left: var(--spacing-lg);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.tips-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .prompts-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .optimized-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .score-item {
+    grid-template-columns: 90px 1fr 50px;
+  }
+}
